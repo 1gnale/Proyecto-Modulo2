@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;500;700&display=swap');
+
+:root {
+  /* colors */
+  --primary-color: #68B0AB;
+  --secondary-color: #FAF3DD;
+  --primary-button: #2A5B5A;
+  --font-color-1: #191F14;
+  --font-color-2: #FAF3DD;
+  --font-color-3: #D58C1D;
+  --font-color-4: #323C2B;
+  --card-background: #F4F9F6;
+
+  /* fonts */
+  --main-font: 'Montserrat', sans-serif;
+  --font-size: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+    
+body {
+  font-family: var(--main-font);
+  font-size: var(--font-size);
+  background-color: var(--secondary-color);
+}
+
+/** upper-container*/
+.upper-content>img{
+  position: relative;
+  width: 100%;
+  max-height: 990px;
+}
+
+.new-proposal{
+  position:absolute;
+  width: 980px;
+  height: 570px;
+  top: 30%;
+  left: 5%;
+  border-radius: 15px;
+  background-color: var(--secondary-color);
+
+}
