@@ -37,3 +37,39 @@
     background: var(--primary-color-dark);
     color: var(--text-light-color);
   }
+
+  footer{
+    background-color: var(--primary-color);
+  }
+
+  .facebook:hover{
+    background: #4157a4;
+    color: #fff;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+.instagram:hover{
+    background: linear-gradient(to top right,
+    #fcde30,
+    #e9712a,
+    #d2313b,
+    #ae4198,
+    #7540a1,
+    #5443a8);
+    color: #fff;
+    border-radius: 5px;
+padding: 3px;
+}
+
+.whatsapp:hover {
+  background: #25d366;
+  color: #fff;
+  border-radius: 5px;
+  padding: 3px;
+}
+
+.logo-sm-footer {
+  height: 100%;
+  width: 200px;
+}
