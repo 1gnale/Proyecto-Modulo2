@@ -45,3 +45,14 @@
     color: var(--primary-color-light);    
     padding: 350px;
   }
+
+  .background-color-gray{
+    background-color: var(--background-color-gray);
+  }
+
+  .img-circ {
+    border-radius: 50%;
+    border: 2px solid #f5f5f5;
+    width: 30%;
+    background-color: var(--background-color-light);
+  }
