@@ -38,10 +38,40 @@
     color: var(--text-light-color);
   }
 
+<<<<<<< Updated upstream
   .container404{
     background-image: url(../src/img/pexels-anna-shvets-5760878.jpg);
     background-size: cover;
     text-align: center;
     color: var(--primary-color-light);    
     padding: 350px;
+=======
+  #titulo {
+    position: relative;
+    height: 50vh;
+  }
+  
+  #titulo .background-image {
+    position: absolute;
+    width: 80%;
+    height: 100%;
+    left: 9%;
+    background-image: url("../src/img/pexels-anna-shvets-5760878.jpg");
+    background-position: center;
+    background-repeat: none;
+    background-size: cover;
+  }
+  .background-color-gray{
+    background-color: var(--background-color-gray);
+  }
+  .custom-btn-secondary {
+    background: var(--primary-color);
+  }
+
+  .img-circ {
+    border-radius: 50%;
+    border: 2px solid #f5f5f5;
+    width: 30%;
+    background-color: var(--background-color-light);
+>>>>>>> Stashed changes
   }
