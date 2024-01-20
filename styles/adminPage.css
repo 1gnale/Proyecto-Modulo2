@@ -1,0 +1,27 @@
+.bg-primary-admin {
+    background-color: var(--primary-color);
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    display: block;
+  }
+
+  th{
+    width: 15%;
+    border: 1px solid #ddd;
+    text-align: center;
+    
+  }
+
+  td {
+    width: 15%;
+    border: 1px solid #ddd;
+    text-align: center;
+  }
+
+  td img {
+    max-width: 50%;
+    height: auto;
+  }
