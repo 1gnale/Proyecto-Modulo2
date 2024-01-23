@@ -28,7 +28,7 @@
     <nav class="navbar navbar-expand-lg z-2">
         <div class="container-fluid">
           <div class="d-none d-lg-block">
-            <a href="./index.html">
+            <a href="./../../index.html">
               <img class="logo-lg-h" src="./../../src/img/navbar-footer/image-removebg-preview_(6).png" alt="logo-rolling perfumes" />
             </a>
           </div>
@@ -57,16 +57,18 @@
         </div>
       </nav>
   </header>
-  <main>
-    <form class="container container-fluid my-5">
-        <div>
-            <h1>REGISTRO</h1>
-        </div>
-        <div class="mb-3">
+  <main class="container register">
+    <section class="my-5">
+      <h1>REGISTRO</h1>
+      <hr>
+    </section>
+    <section class="container register">
+      <form class="container container-fluid my-5">
+        <div class="my-3">
           <label for="name" class="form-label">Nombre y apellido:</label>
           <input type="text" class="form-control" id="name" placeholder="Ej: Juan Pérez" required>
         </div>
-        <div class="mb-3">
+        <div class="my-3">
           <label for="sex" class="form-label">Sexo:</label>
           <br>
           <label for="m" class="form-label">Masculino</label>
@@ -74,38 +76,39 @@
           <label for="f" class="form-label">Femenino</label>
           <input type="radio" id="f" name="group" value="f">
         </div>
-        <div class="mb-3">
+        <div class="my-3">
             <label for="country" class="form-label">País:</label>
             <input type="text" class="form-control" id="country" placeholder="ej: Argentina" required>
         </div>
-        <div class="mb-3">
+        <div class="my-3">
           <label for="ege" class="form-label">Edad:</label>
           <input type="text" class="form-control" id="ege" placeholder="Ej: 18" required>
         </div>
-        <div class="mb-3 px-0">
+        <div class="my-3 px-0">
             <label for="exampleInputEmail1" class="form-label">Correo electrónico:</label>
             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="juanperez@gmail.com" required>
           </div>
-          <div class="mb-3">
+          <div class="my-3">
             <label for="exampleInputPassword1" class="form-label">Contraseña:</label>
             <input type="password" class="form-control" id="exampleInputPassword1" minlength="8" maxlength="20" required>
             <div id="emailHelp" class="form-text">Ingrese una contraseña que tenga al menos una mayuscula, una minuscula y un caractér.</div>
         </div>
-        <div class="mb-3">
+        <div class="my-3">
           <label for="exampleInputPassword1" class="form-label">Confirmar contraseña:</label>
           <input type="password" class="form-control" id="exampleInputPassword1" minlength="8" maxlength="20" required>
           <div id="emailHelp" class="form-text">Ingrese una contraseña que tenga al menos una mayúscula, una minuscula y un caractér.</div>
         </div>
-        <div class="mb-3 form-check">
+        <div class="my-3 form-check">
           <input type="checkbox" class="form-check-input" id="exampleCheck1">
           <label class="form-check-label" for="exampleCheck1">Desea recibir notificaciones de promociones</label>
         </div>
         <button type="submit" class="btn btn-success">Registrarme</button>
         <button type="submit" class="btn btn-danger">Cancelar</button>
       </form>
+    </section>
   </main>
   <footer>
-    <section class="container">
+    <section class="container register">
         <div class="row my-1">
           <div class="col-sm-12 col-md-4  text-center">
             <div class="d-none d-lg-block ">
@@ -153,6 +156,6 @@
 </body>
 <script src="./../../js/registerPage.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-<script src="./js/bootstrap.min.js"></script>
+<script src="./../../js/bootstrap.min.js"></script>
 <script src="./js/page-main/getProductsList.js"></script>
 </html>
