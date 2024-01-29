@@ -3,8 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Include Bootstrap CSS  -->
     <link rel="stylesheet" href="../../styles/bootstrap.min.css">
+    <!-- Include style file-->
     <link rel="stylesheet" href="../../styles/style.css">
+    <!-- Include NavBar & footer style file -->
+  <link rel="stylesheet" href="../../styles/navbar&footer.css"/>
+
+    <!-- Include icons -->
     <script
       src="https://kit.fontawesome.com/100ebb3b87.js"
       crossorigin="anonymous"
@@ -12,42 +18,77 @@
     <title>Acerca de Nosotros</title>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid">
-              <div class="d-none d-lg-block">
-                <a href="../../index.html">
-                  <img class="logo-lg-h" src="../img/image-removebg-preview_(6).png" alt="logo-rolling perfumes" />
-                </a>
-              </div>
-              <div class="d-sm-block d-lg-none">
-                <a href="../../index.html"><img class="logo-sm-h" src="../img/image-removebg-preview.png" alt="logo-rolling perfumes" /></a>
-              </div>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse d-lg-flex flex-lg-row justify-content-lg-between" id="navbarNav">
-                <ul class="navbar-nav ms-lg-4 my-3 my-lg-0 ">
-                  <li class="nav-item">
-                    <a class="nav-link active nav-link-edit rounded mx-1 text-center" aria-current="page" href="../../index.html">Inicio</a>
-                  </li>
-                  <li class="nav-item ">
-                    <a class="nav-link nav-link-edit rounded mx-1 text-center" href="#"  data-bs-toggle="modal" data-bs-target="#exampleModal">Ingresar</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link nav-link-edit rounded mx-1 text-center" href="./AboutUs.html">Acerca de Nosotros</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link nav-link-edit rounded mx-1 text-center" href="./src/pages/adminPage.html">Administración</a>
-                  </li>
-                  </div>
-
-                  
-              </div>
-            </div>
-          </nav>
-    </header>
+  <header>
+    <nav class="navbar navbar-expand-lg z-2">
+        <div class="container-fluid">
+          <div class="d-none d-lg-block">
+            <a href="../../index.html">
+              <img class="logo-lg-h" src="../img/image-removebg-preview_(6).png" alt="logo-rolling perfumes" />
+            </a>
+          </div>
+          <div class="d-sm-block d-lg-none">
+            <a href="../../index.html"><img class="logo-sm-h" src="../img/image-removebg-preview.png" alt="logo-rolling perfumes" /></a>
+          </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse d-lg-flex flex-lg-row justify-content-lg-between" id="navbarNav">
+            <ul class="navbar-nav ms-lg-4 my-3 my-lg-0 ">
+              <li class="nav-item">
+                <a class="nav-link active nav-link-edit rounded mx-1 text-center" aria-current="page" href="../../index.html">Inicio</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link nav-link-edit rounded mx-1 text-center" href="#"  data-bs-toggle="modal" data-bs-target="#exampleModal">Registrarse</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-link-edit rounded mx-1 text-center" href="../pages/AboutUs.html">Acerca de Nosotros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"  data-bs-toggle="modal" data-bs-target="#exampleModal">Ingresar</a>
+              </li>
+              <!-- Esto se va a ver solo cuando el usuario se logee o el administrador -->
+              <!-- <li class="nav-item">
+                <a class="nav-link nav-link-edit rounded mx-1 text-center" href="./src/pages/adminPage.html">Administración</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-link-edit rounded mx-1 text-center" href="#">Lista de deseos</a>
+              </li> 
+              <li class="nav-item">
+                <a class="nav-link nav-link-edit rounded mx-1 text-center" href="#">Cerrar Sesion</a>
+              </li> -->
+              </div>             
+          </div>
+        </div>
+      </nav>
+  </header>
     <main class="mb-5 pb-5">
+      <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Iniciar Sesion</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="formLogin">
+              <div class="my-3">
+                <label for="email" class="form-label">Email</label>
+                <input id="email" type="email"class="form-control" placeholder="Ingrese su email" minlength="1" maxlength="50" required >
+              </div>
+              <div class="my-3">
+                <label for="password" class="form-label">Contraseña</label>
+                <input id="password" type="password"class="form-control" placeholder="Ingrese su contraseña" minlength="1" maxlength="50" required >
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-success">Ingresar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
         <section class="container rounded mt-5 py-5  background-color-gray">
             <article class="text-center my-md-3 py-md-3">
               <h1 >¿Quiénes somos?</h1>
