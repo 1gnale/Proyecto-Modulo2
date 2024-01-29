@@ -41,7 +41,6 @@
   footer{
     background-color: var(--primary-color);
   } 
-
   .facebook:hover{
     background: #4157a4;
     color: #fff;
@@ -85,6 +84,23 @@ padding: 3px;
 
   .background-color-gray{
     background-color: var(--background-color-gray);
+  }
+  
+  #titulo .background-image {
+    position: absolute;
+    width: 80%;
+    height: 100%;
+    left: 9%;
+    background-image: url("../src/img/pexels-anna-shvets-5760878.jpg");
+    background-position: center;
+    background-repeat: none;
+    background-size: cover;
+  }
+  .background-color-gray{
+    background-color: var(--background-color-gray);
+  }
+  .custom-btn-secondary {
+    background: var(--primary-color);
   }
 
   .img-circ {
