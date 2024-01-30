@@ -74,15 +74,6 @@ padding: 3px;
   width: 200px;
 }
 
-
-  .container404{
-    background-image: url(../src/img/pexels-anna-shvets-5760878.jpg);
-    background-size: cover;
-    text-align: center;
-    color: var(--primary-color-light);    
-    padding: 350px;
-  }
-
   #titulo {
     position: relative;
     height: 50vh;
