@@ -1,22 +1,8 @@
-.container register {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  form {
-    display: flex;
-    background-color: #f2f2f2;
-    padding: 20px;
-    border-radius: 10px;
-  }
-  
-  .column {
-    display: flex;
-    flex-direction: column;
-    margin: 0 10px;
-  }
+*{
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+}
   
   input, button {
     margin: 5px 0;
@@ -34,4 +20,36 @@
   
   button:hover {
     background-color: #45a049;
+  }
+
+  .img-register{
+   background: url(../src/img/perfume-formulario.jpg) no-repeat center top;
+   background-size: cover;
+  }
+
+   @media(min-width:768px){   
+    .border-register{
+      border-top-left-radius: 40px;
+      border-bottom-left-radius: 40px;
+    }
+
+    .border-register2{
+      border-top-right-radius: 40px;
+      border-bottom-right-radius: 40px;
+    }
+   }
+
+   .h-title{
+    padding-right: 30px;
+   }
+   
+  @media(max-width:768px){   
+    .h-title{
+      display: none;
+
+    }
+
+    .img-register{
+      display:none
+    }
   }
