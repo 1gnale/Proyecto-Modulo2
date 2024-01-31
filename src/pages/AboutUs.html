@@ -60,6 +60,33 @@
       </nav>
   </header>
     <main class="mb-5 pb-5">
+        <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Iniciar Sesion</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="formLogin">
+              <div class="my-3">
+                <label for="email" class="form-label">Email</label>
+                <input id="email" type="email"class="form-control" placeholder="Ingrese su email" minlength="1" maxlength="50" required >
+              </div>
+              <div class="my-3">
+                <label for="password" class="form-label">Contraseña</label>
+                <input id="password" type="password"class="form-control" placeholder="Ingrese su contraseña" minlength="1" maxlength="50" required >
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-success">Ingresar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
         <section class="container rounded mt-5 py-5  background-color-gray">
             <article class="text-center my-md-3 py-md-3">
               <h1 >¿Quiénes somos?</h1>
