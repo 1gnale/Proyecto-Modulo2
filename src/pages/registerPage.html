@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -5,17 +6,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Registro de usuario</title>
-
-  <!-- Include Bootstrap CSS  -->
   <link rel="stylesheet" href="./../../styles/bootstrap.min.css">
-
-  <!-- Include style file-->
   <link rel="stylesheet" href="./../../styles.css">
-
-  <!-- Include NavBar & footer style file -->
-
+  <link rel="stylesheet" href="./../../styles/registerPage.css">
   <link rel="stylesheet" href="./../../styles/navbar&footer.css"/>
-
   <!-- Include icons -->
   <script
       src="https://kit.fontawesome.com/100ebb3b87.js"
@@ -29,7 +23,7 @@
         <div class="container-fluid">
           <div class="d-none d-lg-block">
             <a href="./../../index.html">
-              <img class="logo-lg-h" src="./../../src/img/navbar-footer/image-removebg-preview_(6).png" alt="logo-rolling perfumes" />
+              <img class="logo-lg-h" src="./../img/navbar-footer/image-removebg-preview_(6).png" alt="logo-rolling perfumes" />
             </a>
           </div>
           <div class="d-sm-block d-lg-none">
@@ -44,7 +38,7 @@
                 <a class="nav-link active nav-link-edit rounded mx-1 text-center" aria-current="page" href="./index.html">Inicio</a>
               </li>
               <li class="nav-item ">
-                <a class="nav-link nav-link-edit rounded mx-1 text-center" href="#"  data-bs-toggle="modal" data-bs-target="#exampleModal">Ingresar</a>
+                <a class="nav-link nav-link-edit rounded mx-1 text-center" href=""  data-bs-toggle="modal" data-bs-target="#exampleModal">Ingresar</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link nav-link-edit rounded mx-1 text-center" href="#">Acerca de Nosotros</a>
@@ -57,55 +51,56 @@
         </div>
       </nav>
   </header>
-  <main class="container register">
-    <section class="my-5">
-      <h1>REGISTRO</h1>
-      <hr>
-    </section>
-    <section class="container register">
-      <form class="container container-fluid my-5">
-        <div class="my-3">
-          <label for="name" class="form-label">Nombre y apellido:</label>
-          <input type="text" class="form-control" id="name" placeholder="Ej: Juan Pérez" required>
+  <main class="container-fluid"> 
+    <div class="row m-1 justify-content-center">
+      <div class="col-md-5 img-register border-register">
+        <h1 class="position m-5 text-center text-light h-title">BIENVENIDOS A ROLLING PERFUMES</h1>
+      </div>
+      <div class="col-md-5 bg-white border-register2">
+        <div>
+          <h2 class="text-center">Crear una cuenta</h2>
         </div>
-        <div class="my-3">
-          <label for="sex" class="form-label">Sexo:</label>
-          <br>
-          <label for="m" class="form-label">Masculino</label>
-          <input type="radio" id="m" name="group" value="m">
-          <label for="f" class="form-label">Femenino</label>
-          <input type="radio" id="f" name="group" value="f">
-        </div>
-        <div class="my-3">
-            <label for="country" class="form-label">País:</label>
-            <input type="text" class="form-control" id="country" placeholder="ej: Argentina" required>
-        </div>
-        <div class="my-3">
-          <label for="ege" class="form-label">Edad:</label>
-          <input type="text" class="form-control" id="ege" placeholder="Ej: 18" required>
-        </div>
-        <div class="my-3 px-0">
-            <label for="exampleInputEmail1" class="form-label">Correo electrónico:</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="juanperez@gmail.com" required>
+        <form  id="formRegister">
+          <div class="my-2 px-2">
+            <label for="name" class="form-label my-0">Nombre</label>
+            <input type="text" class="form-control my-0" id="name" placeholder="Ej: Rodrigo" required>
           </div>
-          <div class="my-3">
-            <label for="exampleInputPassword1" class="form-label">Contraseña:</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" minlength="8" maxlength="20" required>
-            <div id="emailHelp" class="form-text">Ingrese una contraseña que tenga al menos una mayuscula, una minuscula y un caractér.</div>
-        </div>
-        <div class="my-3">
-          <label for="exampleInputPassword1" class="form-label">Confirmar contraseña:</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" minlength="8" maxlength="20" required>
-          <div id="emailHelp" class="form-text">Ingrese una contraseña que tenga al menos una mayúscula, una minuscula y un caractér.</div>
-        </div>
-        <div class="my-3 form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label" for="exampleCheck1">Desea recibir notificaciones de promociones</label>
-        </div>
-        <button type="submit" class="btn btn-success">Registrarme</button>
-        <button type="submit" class="btn btn-danger">Cancelar</button>
-      </form>
-    </section>
+          <div class="my-2 px-2">
+            <label for="lastName" class="form-label my-0">Apellido</label>
+            <input type="text" class="form-control my-0" id="lastName" placeholder="Ej: Cardoso" required>
+          </div>
+          <div class="my-2 px-2">
+            <label for="age" class="form-label my-0">Edad</label>
+            <input type="text" class="form-control my-0" id="age" placeholder="Ej: 25" required>
+          </div>
+          <div class="my-2  px-2">
+              <label for="country" class="form-label my-0">País</label>
+              <input type="text" class="form-control my-0" id="country" placeholder="Ej: Argentina" required>
+          </div>
+          <div class="my-3 px-2">
+              <label for="email" class="form-label my-0">Correo electrónico</label>
+              <input type="email" class="form-control my-0" id="email" aria-describedby="emailHelp" placeholder="juanperez@gmail.com" required>
+          </div>
+          <div class="my-3  px-2">
+              <label for="password1" class="form-label my-0">Contraseña</label>
+              <input type="password" class="form-control my-0" id="password1" minlength="8" maxlength="20" required>
+              <div class="form-text">Ingrese una contraseña que tenga como mínimo 8 caracteres, al menos un dígito, una letra minúscula y al menos una letra mayúscula.</div>
+          </div>
+          <div class="my-3 px-2">
+            <label for="password2" class="form-label my-0">Confirmar contraseña</label>
+            <input type="password" class="form-control my-0" id="password2" minlength="8" maxlength="20" required>
+            <div class="form-text">Repita la contraseña</div>
+          </div>
+          <div class="my-3 form-check px-5">
+            <input type="checkbox" class="form-check-input my-0" id="Check">
+            <label class="form-check-label my-0" for="Check">Desea recibir notificaciones de promociones</label>
+          </div>
+          <div class="text-center d-flex justify-content-center">
+          <button type="submit" class="btn btn-success">Registrarme</button>
+          </div>
+        </form>
+      </div>
+    </div>
   </main>
   <footer>
     <section class="container register">
@@ -150,12 +145,13 @@
           <div class="w-100   text-center">
             <h4>&copy; RollingPerfumes</h4>
           </div>
-          </section>
+    </section>
   </footer>
 
 </body>
-<script src="./../../js/registerPage.js"></script>
+<script src="../../js/validateFormRegister.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="./../../js/bootstrap.min.js"></script>
 <script src="./js/page-main/getProductsList.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </html>
