@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Main Page</title>
+
+  <!-- Include Bootstrap CSS  -->
+  <link rel="stylesheet" href="./../../styles/bootstrap.min.css">
+
+  <!-- Include Admin style file -->
+  
+  <link rel="stylesheet" href="./../../styles/adminPage.css">
+
+  <!-- Include style file-->
+  <link rel="stylesheet" href="./../../styles.css">
+
+  <!-- Include NavBar & footer style file -->
+
+  <link rel="stylesheet" href="./../../styles/navbar&footer.css"/>
+  
+  <!-- swal alert -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.css">
+
+
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg z-2">
+        <div class="container-fluid">
+          <div class="d-none d-lg-block">
+            <a href="./index.html">
+              <img class="logo-lg-h" src="./../../src/img/navbar-footer/image-removebg-preview_(6).png" alt="logo-rolling perfumes" />
+            </a>
+          </div>
+          <div class="d-sm-block d-lg-none">
+            <a href="./index.html"><img class="logo-sm-h" src="./../../src/img/navbar-footer/image-removebg-preview.png" alt="logo-rolling perfumes" /></a>
+          </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse d-lg-flex flex-lg-row justify-content-lg-between" id="navbarNav">
+            <ul class="navbar-nav ms-lg-4 my-3 my-lg-0 ">
+              <li class="nav-item">
+                <a class="nav-link active nav-link-edit rounded mx-1 text-center" aria-current="page" href="./index.html">Inicio</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link nav-link-edit rounded mx-1 text-center" href="#"  data-bs-toggle="modal" data-bs-target="#exampleModal">Ingresar</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-link-edit rounded mx-1 text-center" href="#">Acerca de Nosotros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-link-edit rounded mx-1 text-center" href="adminPage.html">Administración</a>
+              </li>
+              </div>
+
+              
+          </div>
+        </div>
+      </nav>
+  </header>
+
+  <main class="d-flex justify-content-center">
+    <section class="container-fluid m-2">
+        <h1 class="text-center p-4 bg-primary-admin ">Panel de administración</h1>
+        <div class="d-none d-md-flex justify-content-center">
+            <table class="table my-5 ">
+                <thead > 
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Imagen</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Stock</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">Categoria</th>
+                    <th scope="col">Opciones</th>
+                  </tr>
+                </thead>
+                <tbody id="table-body">
+                </tbody>
+              </table>
+        </div>
+        <div class="container admin-buttons d-flex justify-content-end">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#create-product-modal">
+                Cargar Producto
+            </button>
+        </div>
+    </section>  
+    <!-- Modal -->
+    <div class="modal fade" id="create-product-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar Producto</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="productForm">
+                        <div class="form-group">
+                            <label for="imageInput">Seleccionar Imagen</label>
+                            <input type="file" class="form-control-file" id="product-image" accept="image/*" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="product-name" class="col-form-label">Nombre:</label>
+                            <input type="text" class="form-control" id="product-name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="product-description" class="col-form-label">Description:</label>
+                            <input type="text" class="form-control" id="product-description" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="product-price" class="col-form-label">Precio:</label>
+                            <input type="number" class="form-control" id="product-price" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="product-stock" class="col-form-label">Stock:</label>
+                            <input type="number" class="form-control" id="product-stock" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="product-stock" class="col-form-label">Estado:</label>
+                            <select class="form-control" id="product-state" required>
+                                <option value="1">Activo</option>
+                                <option value="0">Oculto</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="product-stock" class="col-form-label">Categoria:</label>
+                            <select class="form-control" id="product-category" required>
+                                <option value="Dulce">Dulce</option>
+                                <option value="Floral">Floral</option>
+                                <option value="Citrico">Citrico</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button id="save-product" type="button" class="btn btn-primary">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <section class="container">
+        <div class="row my-1">
+          <div class="col-sm-12 col-md-4  text-center">
+            <div class="d-none d-lg-block ">
+              <img src="./../../src/img/navbar-footer/image-removebg-preview.png" class="img-fluid logo-lg-h" alt="logo Rolling perfumes" />
+            </div>
+            <div class=" d-sm-block d-lg-none text-center ">
+              <img src="./../../src/img/navbar-footer/image-removebg-preview_(6).png" class="img-fluid logo-sm-footer" alt="logo Rolling perfumes" />
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-4 text-center p-4">
+                <p><i class="fa-solid fa-location-dot fa-lg"></i> General
+                  Paz 576</p>
+                <p><i class="fa-solid fa-location-dot fa-lg"></i>Piso 9 -
+                  Oficina 2</p> 
+                 <p><i class="fa-solid fa-location-dot fa-lg"></i> San
+                  Miguel de Tucuman -
+                  Argentina </p>
+            </div>
+            <div
+            class=" col-sm-12 col-md-4 py-3 my-4 d-none d-lg-block ">
+            <a href="#" class="text-white facebook  m-3 ">
+              <i class="fa-brands fa-square-facebook fa-2xl "></i
+            ></a>
+            <a href="#" class="text-white instagram m-2  "
+              ><i class="fa-brands fa-instagram fa-2xl "></i
+            ></a>
+            <a href="#" class="text-white whatsapp m-3"><i class="fa-brands fa-whatsapp fa-2xl"></i></a>
+          </div>
+          <div
+            class=" col-sm-12 col-md-4 py-3 my-4  d-sm-block d-lg-none text-center">
+            <a href="#" class="text-white facebook  m-3 ">
+              <i class="fa-brands fa-square-facebook fa-xl "></i
+            ></a>
+            <a href="#" class="text-white instagram m-2  "
+              ><i class="fa-brands fa-instagram fa-xl "></i
+            ></a>
+            <a href="#" class="text-white whatsapp m-3"><i class="fa-brands fa-whatsapp fa-xl"></i></a>
+          </div>
+          <div class="w-100   text-center">
+            <h4>&copy; RollingPerfumes</h4>
+          </div>
+          </section>
+  </footer>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" 
+crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.js"></script>
+
+<script src="./../../js/bootstrap.min.js"></script>
+<script src="../../js/page_admin/admin.js" type="module"></script>
+<!-- Include icons -->
+<script
+src="https://kit.fontawesome.com/100ebb3b87.js"
+crossorigin="anonymous"
+></script>
+
+</html>
