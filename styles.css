@@ -28,7 +28,7 @@
 body {
   font-family: var(--main-font);
   font-size: var(--font-size);
-  background-color: var(--secondary-color);
+  background-color: #FAF3DD;
 }
 
 /** upper-container*/
@@ -297,4 +297,3 @@ body {
   font-weight: 600;
   color: var(--font-color-3);
 }
-
