@@ -79,7 +79,6 @@ padding: 3px;
   }
   
   #titulo .background-image {
-    position: absolute;
     width: 80%;
     height: 100%;
     background-image: url("../src/img/pexels-anna-shvets-5760878.jpg");

@@ -7,7 +7,7 @@ for (let i = 0; i < 10; i++) {
     `  <div class="card-body product-card-body d-flex flex-column">`+
     `    <h5 class="card-title text-center">Victoria’s Secret Bombshell</h5>`+
     `    <p class="card-text text-center">Una fragancia floral y frutal, fresca y seductora, con toques de toronja, piña y peonía. Ideal para momentos especiales, emana confianza y feminidad.</p>`+
-    `    <h4 class="text-center">$15:00</h4>`+
+    `    <h4 class="text-center">$15,00</h4>`+
     `    <a href="#" class="btn mx-auto buy-button">Buy Now</a>`+
     `  </div>`+
     `</div>`;
