@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="e-commerse de perfumeria">
+    <meta name="keywords" content="Perfumes, descripcion de cada uno, precios">
+    <meta name="author" content="Grupo 2">
     <!-- Include Bootstrap CSS  -->
     <link rel="stylesheet" href="../../styles/bootstrap.min.css">
     <!-- Include style file-->
@@ -17,15 +20,15 @@
 </head>
 <body>
     <header>
-    <nav class="navbar navbar-expand-lg z-2">
+      <nav class="navbar navbar-expand-lg z-2">
         <div class="container-fluid">
           <div class="d-none d-lg-block">
-            <a href="../../index.html">
+            <a href="/index.html">
               <img class="logo-lg-h" src="../img/navbar-footer/image-removebg-preview_(6).png" alt="logo-rolling perfumes" />
             </a>
           </div>
           <div class="d-sm-block d-lg-none">
-            <a href="../../index.html"><img class="logo-sm-h" src="../img/navbar-footer/image-removebg-preview.png" alt="logo-rolling perfumes" /></a>
+            <a href="/index.html"><img class="logo-sm-h" src="../img/navbar-footer/image-removebg-preview.png" alt="logo-rolling perfumes" /></a>
           </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -33,30 +36,26 @@
           <div class="collapse navbar-collapse d-lg-flex flex-lg-row justify-content-lg-between" id="navbarNav">
             <ul class="navbar-nav ms-lg-4 my-3 my-lg-0 ">
               <li class="nav-item">
-                <a class="nav-link active nav-link-edit rounded mx-1 text-center" aria-current="page" href="../../index.html">Inicio</a>
-              </li>
-              <li class="nav-item ">
-                <a class="nav-link nav-link-edit rounded mx-1 text-center" href="#"  data-bs-toggle="modal" data-bs-target="#exampleModal">Registrarse</a>
+                <a class="nav-link active nav-link-edit rounded mx-1 text-center" aria-current="page" href="/index.html">Inicio</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link nav-link-edit rounded mx-1 text-center" href="../pages/AboutUs.html">Acerca de Nosotros</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#"  data-bs-toggle="modal" data-bs-target="#exampleModal">Ingresar</a>
-              </li>
               <!-- Esto se va a ver solo cuando el usuario se logee o el administrador -->
-              <!-- <li class="nav-item">
-                <a class="nav-link nav-link-edit rounded mx-1 text-center" href="./src/pages/adminPage.html">Administración</a>
+              <li class="nav-item" id="adminLi" >
+                <a class="nav-link nav-link-edit rounded mx-1 text-center" href="../pages/adminPage.html">Administración</a>
               </li>
-              <li class="nav-item">
+                <li class="nav-item">
                 <a class="nav-link nav-link-edit rounded mx-1 text-center" href="#">Lista de deseos</a>
               </li> 
-              <li class="nav-item">
-                <a class="nav-link nav-link-edit rounded mx-1 text-center" href="#">Cerrar Sesion</a>
-              </li> -->
+            </ul>
+            <div class="nav-item d-flex justify-content-lg-between">
+              <a class="nav-link nav-link-edit  btn rounded-2 p-2 m-1" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Ingresar</a>
+              <a class="nav-link btn nav-link-edit rounded-2 m-1 p-2 text-center" href="../pages/registerPage.html">Registrarse</a>
+                <a class="nav-link nav-link-edit btn rounded-2 m-1 p-2 text-center" onclick="LogOut()" href="#">Cerrar Sesion</a>
+            </div>
               </div>             
           </div>
-        </div>
       </nav>
   </header>
     <main class="mb-5 pb-5">
@@ -100,27 +99,22 @@
               <div class="text-center col-sm-12 col-md-6 col-lg-4">
                 <img src="../img/avatars/Jime.jpeg" alt="avatar Jimena " class="img-circ">
                 <h5 class="mt-2 mb-4">Jimena Herrera</h5>
-                
               </div>
               <div class="text-center col-sm-12 col-md-6 col-lg-4">
                 <img src="../img/avatars/Ignacio.jpg" alt="avatar Ignacio" class="img-circ">
                 <h5 class="mt-2 mb-4">Ignacio Mena</h5>
-                
               </div>
               <div class="text-center col-sm-12 col-md-6 col-lg-4">
                 <img src="../img/avatars/Kelvin.png" alt="avatar Kelvin" class="img-circ">
                 <h5 class="my-2">Kelvin Pucho</h5>
-                
               </div>
               <div class="text-center col-sm-12 col-md-6 col-lg-4">
                 <img src="../img/avatars/Rodri.jpeg" alt="avatar Rodrigo" class="img-circ">
                 <h5 class="my-2">Rodrigo Cardoso</h5>
-                
               </div>
               <div class="text-center col-sm-12 col-md-6 col-lg-4">
                 <img src="../img/avatars/Andi.jpg" alt="avatar Andrea" class="img-circ">
                 <h5 class="my-2">Andrea Saraza</h5>
-                
               </div>
             </article>
           </section>
