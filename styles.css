@@ -247,11 +247,21 @@ body {
   color: var(--font-color-2);
 }
 
-.dropdown-menu{
+.select-category{
   background-color: var(--color-summer-green);
   width: 200px;
 }
 
+.btn-search{
+  background-color: var(--primary-color);
+  color: var(--font-color-4);
+  border: 1px solid var(--font-color-4);
+}
+
+.btn-search:hover{
+  background-color: var(--primary-button);
+  color: var(--font-color-2);
+}
 
 /** products-container */
 
@@ -269,8 +279,20 @@ body {
   height: 900px;
   width: 25rem;
   @media (max-width: 576px) {
-    height: 770px;
+    height: 570px;
     width: 15rem;
+  }
+}
+
+.product-card .title-text{
+  @media (max-width: 576px) {
+    font-size: 1.5rem;
+  }
+}
+
+.product-card img{
+  @media (max-width: 576px) {
+    height: 50px;
   }
 }
 
@@ -297,3 +319,4 @@ body {
   font-weight: 600;
   color: var(--font-color-3);
 }
+

@@ -63,10 +63,11 @@
       </nav>
       
   </header>
-  <main> 
-            <!-- Modal -->
-          
-     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <main>
+           <!-- Modal -->
+     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+     <!-- Modal -->
+     <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -104,30 +105,19 @@
         </div>
       </div>
     </section>
-    <section class="filters-container d-flex flex-column flex-md-row justify-content-md-between justify-content-lg-start w-100 py-2 px-3 py-md-5 px-md-5">
+    <section class="filters-container d-flex flex-column flex-md-row justify-content-md-between justify-content-lg-between w-100 py-2 px-3 py-md-5 px-md-5">
         <div class="mb-2 mx-md-3">
-          <div class="dropdown">
-            <button class="btn dropdown-toggle filter-dropdown" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Products
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <a class="dropdown-item" href="./src/pages/detailspage.html">Opción 1.1</a>
-              <a class="dropdown-item" href="#">Opción 1.2</a>
-              <a class="dropdown-item" href="#">Opción 1.3</a>
-            </div>
-          </div>
+          <h6>Seleccione una categoria</h6>
+          <select class="form-select form-select form-select-sm-lg mb-3 select-category" aria-label=".form-select-lg example">
+            <option selected>Todo</option>
+            <option value="Dulce">Dulce</option>
+            <option value="Floral">Floral</option>
+            <option value="Citrico">Citrico</option>
+          </select>
         </div>
-        <div class="mb-2 mx-md-3">
-          <div class="dropdown">
-            <button class="btn dropdown-toggle filter-dropdown" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Categories
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-              <a class="dropdown-item" href="#">Opción 2.1</a>
-              <a class="dropdown-item" href="#">Opción 2.2</a>
-              <a class="dropdown-item" href="#">Opción 2.3</a>
-            </div>
-          </div>
+        <div class="mb-2 ms-md-3 d-flex">
+          <input type="text" class="form-control" id="searchInput" placeholder="Search">
+          <button class="btn btn-primary btn-search"><i class="fas fa-search"></i></button>
         </div>
     </section>
     <section class="products-container container mx-auto py-5">
@@ -136,7 +126,7 @@
       </div>
     </section>
   </main>
-  <footer>
+  <footer class="container-fluid py-2">
     <section class="container">
         <div class="row my-1">
           <div class="col-sm-12 col-md-4  text-center">
@@ -148,34 +138,20 @@
             </div>
           </div>
           <div class="col-sm-12 col-md-4 text-center p-4">
-                <p><i class="fa-solid fa-location-dot fa-lg"></i> General
-                  Paz 576</p>
-                <p><i class="fa-solid fa-location-dot fa-lg"></i>Piso 9 -
-                  Oficina 2</p> 
-                 <p><i class="fa-solid fa-location-dot fa-lg"></i> San
-                  Miguel de Tucuman -
-                  Argentina </p>
+                <p><i class="fa-solid fa-location-dot fa-lg"></i> General Paz 576</p>
+                <p>Piso 9 - Oficina 2</p> 
+                 <p> San Miguel de Tucuman - Argentina </p>
             </div>
             <div
             class=" col-sm-12 col-md-4 py-3 my-4 d-none d-lg-block ">
-            <a href="#" class="text-white facebook  m-3 ">
+            <a href="./src/pages/404NotFound.html" class="text-white facebook  m-3 ">
               <i class="fa-brands fa-square-facebook fa-2xl "></i
             ></a>
-            <a href="#" class="text-white instagram m-2  "
+            <a href="./src/pages/404NotFound.html" class="text-white instagram m-2  "
               ><i class="fa-brands fa-instagram fa-2xl "></i
             ></a>
-            <a href="#" class="text-white whatsapp m-3"><i class="fa-brands fa-whatsapp fa-2xl"></i></a>
-          </div>
-          <div
-            class=" col-sm-12 col-md-4 py-3 my-4  d-sm-block d-lg-none text-center">
-            <a href="#" class="text-white facebook  m-3 ">
-              <i class="fa-brands fa-square-facebook fa-xl "></i
-            ></a>
-            <a href="#" class="text-white instagram m-2  "
-              ><i class="fa-brands fa-instagram fa-xl "></i
-            ></a>
-            <a href="#" class="text-white whatsapp m-3"><i class="fa-brands fa-whatsapp fa-xl"></i></a>
-          </div>
+            <a href="./src/pages/404NotFound.html" class="text-white whatsapp m-3"><i class="fa-brands fa-whatsapp fa-2xl"></i></a>
+          </div>          
           <div class="w-100   text-center">
             <h4>&copy; RollingPerfumes</h4>
           </div>

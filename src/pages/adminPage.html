@@ -16,6 +16,8 @@
   <link rel="stylesheet" href="./../../styles/navbar&footer.css"/>
   <!-- swal alert -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.css">
+  <!-- Toast -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <title>Administracion</title>
 </head>
 <body>
@@ -58,7 +60,7 @@
         </div>
     </nav>
   </header>
-  <main class="d-flex justify-content-center">
+  <main class="d-flex justify-content-center pb-5">
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -87,18 +89,17 @@
       </div>
     </div>
     <section class="container-fluid m-2">
-        <h1 class="text-center p-4 bg-primary-admin ">Panel de administración</h1>
+        <h1 class="text-center p-4 bg-primary-admin "><strong>Panel de Administración</strong></h1>
         <div class="d-none d-md-flex justify-content-center">
-            <table class="table my-5 ">
+            <table class="table my-5 " style="table-layout: fixed;">
                 <thead > 
                   <tr>
-                    <th scope="col">ID</th>
+                    <th scope="col"  style="height: 50px; width: 100px;">ID</th>
                     <th scope="col">Imagen</th>
                     <th scope="col">Nombre</th>
                     <th scope="col">Description</th>
                     <th scope="col">Precio</th>
                     <th scope="col">Stock</th>
-                    <th scope="col">Estado</th>
                     <th scope="col">Categoria</th>
                     <th scope="col">Opciones</th>
                   </tr>
@@ -108,24 +109,31 @@
               </table>
         </div>
         <div class="container admin-buttons d-flex justify-content-end">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#create-product-modal">
+            <button id="btn-show-modal" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#create-product-modal">
                 Cargar Producto
             </button>
         </div>
     </section>  
     <!-- Modal -->
-    <div class="modal fade" id="create-product-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="create-product-modal" tabindex="-1" aria-labelledby="create-product-modalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar Producto</h1>
+                    
+                    <h1 class="modal-title fs-5" id="create-product-modalLabel">Agregar Producto</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form id="productForm">
-                        <div class="form-group">
+                        <div class="form-group text-center">
                             <label for="imageInput">Seleccionar Imagen</label>
-                            <input type="file" class="form-control-file" id="product-image" accept="image/*" required>
+                            <div class="d-flex flex-column align-items-center">
+                              <img class="img-fluid my-2" id="img-preview">
+                              <label for="product-image" class="btn btn-load rounded-2 p-2 m-1">
+                                Cargar Imagen
+                                <input type="file" class="d-none" id="product-image" accept="image/*" required>
+                              </label>
+                            </div>
                         </div>
                         <div class="mb-3">
                             <label for="product-name" class="col-form-label">Nombre:</label>
@@ -133,7 +141,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="product-description" class="col-form-label">Description:</label>
-                            <input type="text" class="form-control" id="product-description" required>
+                            <textarea type="text" class="form-control" id="product-description" required></textarea>
                         </div>
                         <div class="mb-3">
                             <label for="product-price" class="col-form-label">Precio:</label>
@@ -142,13 +150,6 @@
                         <div class="mb-3">
                             <label for="product-stock" class="col-form-label">Stock:</label>
                             <input type="number" class="form-control" id="product-stock" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="product-stock" class="col-form-label">Estado:</label>
-                            <select class="form-control" id="product-state" required>
-                                <option value="1">Activo</option>
-                                <option value="0">Oculto</option>
-                            </select>
                         </div>
                         <div class="mb-3">
                             <label for="product-stock" class="col-form-label">Categoria:</label>
@@ -161,14 +162,14 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button id="btn-create-exit" type="button" class="btn btn-secondary" data-bs-dismiss="modal" hidden>Cerrar</button>
                     <button id="save-product" type="button" class="btn btn-primary">Guardar</button>
                 </div>
             </div>
         </div>
     </div>
   </main>
-  <footer>
+  <footer class="container-fluid py-2 mt-5">
     <section class="container">
         <div class="row my-1">
           <div class="col-sm-12 col-md-4  text-center">
@@ -180,23 +181,19 @@
             </div>
           </div>
           <div class="col-sm-12 col-md-4 text-center p-4">
-                <p><i class="fa-solid fa-location-dot fa-lg"></i> General
-                  Paz 576</p>
-                <p><i class="fa-solid fa-location-dot fa-lg"></i>Piso 9 -
-                  Oficina 2</p> 
-                 <p><i class="fa-solid fa-location-dot fa-lg"></i> San
-                  Miguel de Tucuman -
-                  Argentina </p>
+                <p><i class="fa-solid fa-location-dot fa-lg"></i> General Paz 576</p>
+                <p>Piso 9 - Oficina 2</p> 
+                 <p>San Miguel de Tucuman - Agentina </p>
             </div>
             <div
             class=" col-sm-12 col-md-4 py-3 my-4 d-none d-lg-block ">
-            <a href="#" class="text-white facebook  m-3 ">
+            <a href="./404NotFound.html" class="text-white facebook  m-3 ">
               <i class="fa-brands fa-square-facebook fa-2xl "></i
             ></a>
-            <a href="#" class="text-white instagram m-2  "
+            <a href="./404NotFound.html" class="text-white instagram m-2  "
               ><i class="fa-brands fa-instagram fa-2xl "></i
             ></a>
-            <a href="#" class="text-white whatsapp m-3"><i class="fa-brands fa-whatsapp fa-2xl"></i></a>
+            <a href="./404NotFound.html" class="text-white whatsapp m-3"><i class="fa-brands fa-whatsapp fa-2xl"></i></a>
           </div>
           <div
             class=" col-sm-12 col-md-4 py-3 my-4  d-sm-block d-lg-none text-center">
@@ -220,9 +217,13 @@ crossorigin="anonymous"></script>
 
 <script src="./../../js/bootstrap.min.js"></script>
 <script src="../../js/page_admin/admin.js" type="module"></script>
+<!-- <script src="../../js/page_admin/edit.js" ></script> -->
 <!-- Include icons -->
 <script
 src="https://kit.fontawesome.com/100ebb3b87.js"
 crossorigin="anonymous"
 ></script>
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<!-- Toast -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </html>
