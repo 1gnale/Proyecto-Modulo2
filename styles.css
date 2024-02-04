@@ -269,8 +269,20 @@ body {
   height: 900px;
   width: 25rem;
   @media (max-width: 576px) {
-    height: 770px;
+    height: 570px;
     width: 15rem;
+  }
+}
+
+.product-card .title-text{
+  @media (max-width: 576px) {
+    font-size: 1.5rem;
+  }
+}
+
+.product-card img{
+  @media (max-width: 576px) {
+    height: 50px;
   }
 }
 
