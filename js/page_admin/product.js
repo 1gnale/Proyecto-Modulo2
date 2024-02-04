@@ -1,13 +1,12 @@
 export class Product{
 
-    constructor(code, image, names, description, price, stock, state, category){
+    constructor(code, image, names, description, price, stock, category){
         this.code=code;
         this.image=image;
         this.names=names;
         this.description=description;
         this.price=price;
         this.stock=stock;
-        this.state=state;
         this.category=category;
     }
 
@@ -33,10 +32,6 @@ export class Product{
 
     set setStock(stock){
         this.stock=stock;
-    }
-
-    set setState(state){
-        this.state=state;
     }
 
     set setCategory(category){
@@ -65,10 +60,6 @@ export class Product{
 
     get getStock(){
         return this.stock;
-    }
-
-    get getState(){
-        return this.state;
     }
 
     get getCategory(){
