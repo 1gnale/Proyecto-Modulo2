@@ -91,10 +91,10 @@
     <section class="container-fluid m-2">
         <h1 class="text-center p-4 bg-primary-admin "><strong>Panel de Administración</strong></h1>
         <div class="d-none d-md-flex justify-content-center">
-            <table class="table my-5 ">
+            <table class="table my-5 " style="table-layout: fixed;">
                 <thead > 
                   <tr>
-                    <th scope="col">ID</th>
+                    <th scope="col"  style="height: 50px; width: 100px;">ID</th>
                     <th scope="col">Imagen</th>
                     <th scope="col">Nombre</th>
                     <th scope="col">Description</th>
@@ -141,7 +141,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="product-description" class="col-form-label">Description:</label>
-                            <input type="text" class="form-control" id="product-description" required>
+                            <textarea type="text" class="form-control" id="product-description" required></textarea>
                         </div>
                         <div class="mb-3">
                             <label for="product-price" class="col-form-label">Precio:</label>

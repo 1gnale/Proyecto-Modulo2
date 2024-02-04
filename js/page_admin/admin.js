@@ -159,7 +159,7 @@ function editProduct(id) {
 
         //toast
         toastr.options.positionClass = 'toast-top-right';
-        toastr.success('Producto eliminado ' +id + ' exitosamente');
+        toastr.success('Producto editado ' +id + ' exitosamente');
     }
     
 }
@@ -204,7 +204,7 @@ window.removeProduct = function (id) {
             renderTable(newProducts);
             //toast
             toastr.options.positionClass = 'toast-top-right';
-            toastr.error('Producto editado ' +id + ' exitosamente');
+            toastr.error('Producto eliminado ' +id + ' exitosamente');
         }
     });
 }

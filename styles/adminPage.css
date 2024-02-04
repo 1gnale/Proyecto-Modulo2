@@ -36,3 +36,17 @@
     background: var(--primary-button);
     color: var(--text-light-color-nav);
   }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th, td {
+    border: 2px solid var(--primary-color);
+    padding: 8px;
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
