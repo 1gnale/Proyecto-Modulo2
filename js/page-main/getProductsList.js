@@ -54,7 +54,6 @@ btnSearch.addEventListener('click', function() {
                                             filter((product)=>{
                                                 return product.names.toLowerCase().includes(searchValue.toLowerCase());
                                             });
-
         container.innerHTML = getProducts(filteredProducts);
     }
 });
