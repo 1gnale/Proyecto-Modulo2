@@ -46,24 +46,26 @@
               </li>
               <!-- Esto se va a ver solo cuando el usuario se logee o el administrador -->
               <li class="nav-item" id="adminLi" >
-                <a class="nav-link nav-link-edit rounded mx-1 text-center" href="./src/pages/adminPage.html">Administración</a>
+                <a class="nav-link nav-link-edit d-none rounded mx-1 text-center" href="./src/pages/adminPage.html">Administración</a>
               </li>
                 <li class="nav-item">
-                <a class="nav-link nav-link-edit rounded mx-1 text-center" href="#">Lista de deseos</a>
+                <a class="nav-link nav-link-edit rounded d-none mx-1 text-center" href="#">Lista de deseos</a>
               </li>  
             </ul>
             <div class="nav-item d-flex justify-content-lg-between">
-              <a class="nav-link nav-link-edit  btn rounded-2 p-2 m-1" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Ingresar</a>
-              <a class="nav-link btn nav-link-edit rounded-2 m-1 p-2 text-center" href="./src/pages/registerPage.html">Registrarse</a>
+              <a class="nav-link nav-link-edit  btn rounded-2 p-2 m-1" href="#"  data-bs-toggle="modal" data-bs-target="#exampleModal">Ingresar</a>
+              <a class="nav-link btn nav-link-edit rounded-2 m-1 p-2 text-center" id="register" href="./src/pages/registerPage.html">Registrarse</a>
               
-                <a class="nav-link nav-link-edit btn rounded-2 m-1 p-2 text-center" onclick="LogOut()" href="#">Cerrar Sesion</a>
+                <a class="nav-link nav-link-edit btn d-none rounded-2 m-1 p-2 text-center" onclick="LogOut()" href="#">Cerrar Sesion</a>
             </div>
-              </div>             
+              </div>  
           </div>
       </nav>
+      
   </header>
   <main> 
-     <!-- Modal -->
+            <!-- Modal -->
+          
      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -89,7 +91,7 @@
           </div>
         </div>
       </div>
-    </div>  
+    </div>
     <section class="upper-container w-100">
       <div class="upper-content">
         <img src="src/img/page-main/header-background-1.jpg" alt="header-background-3" class="img-fluid">
@@ -183,5 +185,6 @@
 <script src="./js/bootstrap.min.js"></script>
 <script src="./js/page-main/getProductsList.js"></script>
 <script type="module" src="./js/page-main/login.js"></script>
+
 </body>
 </html>
