@@ -8,7 +8,7 @@ let inputEmail=document.getElementById("emailRegister");
 let inputContraseña1=document.getElementById("password1");
 let inputContraseña2=document.getElementById("password2");
 let formRegister=document.getElementById("formRegister")
-
+let modalLoguin=document.querySelector(".modal-body")
 
 function validarNombre (inputNombre){
     if (inputNombre.value.trim().length>=3) {
@@ -211,7 +211,10 @@ function guardarUsuario(e) {
                 icon: "success",
               });
             limpiarFormulario();
-            window.location.replace("")
+            setTimeout(()=>{
+                
+            },1500);
+            
         }
     }else{
         Swal.fire({
@@ -227,6 +230,7 @@ function limpiarFormulario(){
     inputNombre.className="form-control";
     inputApellido.className="form-control";
     inputEdad.className="form-control";
+    inputPais.className="form-control";
     inputEmail.className="form-control";
     inputContraseña1.className="form-control";
     inputContraseña2.className="form-control";

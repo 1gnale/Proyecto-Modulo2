@@ -64,7 +64,7 @@ if (!arrayUsers || arrayUsers.length === 0) {
    window.LogOut=function(){
     sessionStorage.removeItem("user");
     adminLi.className="nav-item d-none"
-    window.location.replace("/index.html")
+    window.location.replace("../index.html")
   }
 
   
