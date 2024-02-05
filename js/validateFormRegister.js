@@ -4,7 +4,7 @@ let inputNombre=document.getElementById("name");
 let inputApellido=document.getElementById("lastName");
 let inputEdad=document.getElementById("age");
 let inputPais=document.getElementById("country");
-let inputEmail=document.getElementById("email");
+let inputEmail=document.getElementById("emailRegister");
 let inputContraseña1=document.getElementById("password1");
 let inputContraseña2=document.getElementById("password2");
 let formRegister=document.getElementById("formRegister")
@@ -98,19 +98,19 @@ function validarPais(inputPais) {
     }
 }
 
-function validarEmail(inputEmail) {
-    const regexEmail= /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    if (regexEmail.test(inputEmail.value)) {
-        inputEmail.className="form-control is-valid";
+function validarEmail(input) {
+    const regexEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    if (regexEmail.test(input.value)) {
+        input.className = "form-control is-valid";
         return true;
     }else{
-        inputEmail.className="form-control is-invalid";
+        input.className = "form-control is-invalid";
         return false;
     }
 }
-const regexPassword=  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
 
 function validarPassword1(inputContraseña1) {
+    const regexPassword=  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
     if (regexPassword.test(inputContraseña1.value)) {
         inputContraseña1.className="form-control is-valid";
         return true;
@@ -126,6 +126,7 @@ function validarPassword1(inputContraseña1) {
 }
 
 function validarPassword2(inputContraseña2) {
+    const regexPassword=  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
     if (regexPassword.test(inputContraseña2.value)) {
         inputContraseña2.className="form-control is-valid";
         return true;
@@ -162,9 +163,9 @@ function contraseñasCoinciden() {
     }
 }
 
-function validarTodo(inputNombre,inputApellido,inputEdad,inputPais,inputContraseña1,inputContraseña2) {
+function validarTodo(inputNombre,inputApellido,inputEdad,inputPais,inputEmail,inputContraseña1,inputContraseña2) {
     if (validarNombre(inputNombre)&&validarApellido(inputApellido)&&validarEdad(inputEdad)&&
-      validarPais(inputPais)&&validarPassword1(inputContraseña1)&&validarPassword2(inputContraseña2)) {
+      validarPais(inputPais)&&validarEmail(inputEmail)&&validarPassword1(inputContraseña1)&&validarPassword2(inputContraseña2)) {
       return true;
     } else {
       return false;
@@ -175,7 +176,7 @@ inputNombre.addEventListener('blur',()=>validarNombre(inputNombre));
 inputApellido.addEventListener('blur',()=>validarApellido(inputApellido));
 inputEdad.addEventListener('blur',()=>validarEdad(inputEdad));
 inputPais.addEventListener('blur',()=>validarPais(inputPais));
-inputEmail.addEventListener("blur",()=>validarEmail(inputEmail));
+inputEmail.addEventListener('blur',()=>validarEmail(inputEmail));
 inputContraseña1.addEventListener("blur",()=>validarPassword1(inputContraseña1));
 inputContraseña2.addEventListener("blur",()=>validarPassword2(inputContraseña2));
 inputContraseña2.addEventListener("blur",()=>contraseñasCoinciden());
@@ -184,7 +185,7 @@ formRegister.addEventListener("submit", guardarUsuario);
 
 function guardarUsuario(e) {
     e.preventDefault();
-    if (validarTodo(inputNombre,inputApellido,inputEdad,inputPais,inputContraseña1,inputContraseña2)) {
+    if (validarTodo(inputNombre,inputApellido,inputEdad,inputPais,inputEmail,inputContraseña1,inputContraseña2)) {
         if (arrayUsuario.find((user) => user.email === inputEmail.value)){
             inputEmail.className="form-control is-invalid";
             Swal.fire({

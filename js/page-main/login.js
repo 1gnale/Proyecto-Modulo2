@@ -2,9 +2,8 @@ let inputEmail=document.getElementById("email");
 let inputPassword=document.getElementById("password");
 let formLogin=document.getElementById("formLogin");
 let adminLi=document.getElementById("adminLi");
+let register=document.getElementById("register");
 formLogin.addEventListener("submit",Login);
-
-checkSaveAdmin();
 
 function saveUserLog(user) {
     sessionStorage.setItem("user", JSON.stringify(user));
@@ -16,7 +15,7 @@ function getRolUserLog() {
     if (user!==null) {
         return user.role
     }else{
-        return "Invitado"
+        return "Cliente"
     }
      };
 
@@ -32,9 +31,9 @@ function Login(e) {
                     role:usuarioEncontrado.role,
                 };
                 saveUserLog(savedUser);
-                checkAdmin(adminLi);
                 formLogin.reset();
                 $("#exampleModal").modal("hide")
+                checkAdmin(adminLi);
             }else{
                  alert("Email o Password incorrectos")
             }
@@ -50,20 +49,16 @@ function checkSaveAdmin(){
     const arrayUsers=JSON.parse(localStorage.getItem("users"));
     const userAdmin={
     
-    email:"perfumenrolling@gmail.com",
+    email:"perfumesrolling@gmail.com",
     role:"Administrador",
     password:"Perfumes24",
 
 
 };
-if (arrayUsers===null) {
-        const users=[userAdmin];      
-        localStorage.setItem("users", JSON.stringify(users));
-    
-  }else if (arrayUsers.length === 0) {
-    const users=[userAdmin];     
+if (!arrayUsers || arrayUsers.length === 0) {
+    const users = [userAdmin];
     localStorage.setItem("users", JSON.stringify(users));
-  }
+}
    }
 
    window.LogOut=function(){
@@ -71,3 +66,22 @@ if (arrayUsers===null) {
     adminLi.className="nav-item d-none"
     window.location.replace("/index.html")
   }
+
+  
+
+  function checkAdmin(adminLi) {
+    const role = getRolUserLog();
+
+    if (role === "Administrador") {
+        adminLi.classList.remove("d-none");  
+    } 
+}
+
+function closeRegister(register) {
+    const close= getRolUserLog();
+    if (close === "Administrador") {
+        register.className="d-none"
+    }
+}
+
+  

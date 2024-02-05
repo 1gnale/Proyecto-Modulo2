@@ -46,23 +46,24 @@
               </li>
               <!-- Esto se va a ver solo cuando el usuario se logee o el administrador -->
               <li class="nav-item" id="adminLi" >
-                <a class="nav-link nav-link-edit rounded mx-1 text-center" href="./src/pages/adminPage.html">Administración</a>
+                <a class="nav-link nav-link-edit d-none rounded mx-1 text-center" href="./src/pages/adminPage.html">Administración</a>
               </li>
                 <li class="nav-item">
-                <a class="nav-link nav-link-edit rounded mx-1 text-center" href="./src/pages/WishesList.html">Lista de deseos</a>
+                <a class="nav-link nav-link-edit rounded d-none mx-1 text-center" href="#">Lista de deseos</a>
               </li>  
             </ul>
             <div class="nav-item d-flex justify-content-lg-between">
-              <a class="nav-link nav-link-edit  btn rounded-2 p-2 m-1" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Ingresar</a>
-              <a class="nav-link btn nav-link-edit rounded-2 m-1 p-2 text-center" href="./src/pages/registerPage.html">Registrarse</a>
+              <a class="nav-link nav-link-edit  btn rounded-2 p-2 m-1" href="#"  data-bs-toggle="modal" data-bs-target="#exampleModal">Ingresar</a>
+              <a class="nav-link btn nav-link-edit rounded-2 m-1 p-2 text-center" id="register" href="./src/pages/registerPage.html">Registrarse</a>
               
-                <a class="nav-link nav-link-edit btn rounded-2 m-1 p-2 text-center" onclick="LogOut()" href="#">Cerrar Sesion</a>
+                <a class="nav-link nav-link-edit btn d-none rounded-2 m-1 p-2 text-center" onclick="LogOut()" href="#">Cerrar Sesion</a>
             </div>
-              </div>             
+              </div>  
           </div>
       </nav>
+      
   </header>
-  <main> 
+  <main>
      <!-- Modal -->
      <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -89,7 +90,7 @@
           </div>
         </div>
       </div>
-    </div>  
+    </div>
     <section class="upper-container w-100">
       <div class="upper-content">
         <img src="src/img/page-main/header-background-1.jpg" alt="header-background-3" class="img-fluid">
@@ -105,7 +106,7 @@
     <section class="filters-container d-flex flex-column flex-md-row justify-content-md-between justify-content-lg-between w-100 py-2 px-3 py-md-5 px-md-5">
         <div class="mb-2 mx-md-3">
           <h6>Seleccione una categoria</h6>
-          <select class="form-select form-select form-select-sm-lg mb-3 select-category" aria-label=".form-select-lg example">
+          <select class="form-select form-select form-select-sm-lg mb-0 mb-md-3 py-0 py-md-2 select-category" aria-label=".form-select-lg example">
             <option selected>Todo</option>
             <option value="Dulce">Dulce</option>
             <option value="Floral">Floral</option>
@@ -158,5 +159,6 @@
 <script src="./js/bootstrap.min.js"></script>
 <script src="./js/page-main/getProductsList.js"></script>
 <script type="module" src="./js/page-main/login.js"></script>
+
 </body>
 </html>
