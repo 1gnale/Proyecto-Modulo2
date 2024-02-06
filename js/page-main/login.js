@@ -1,3 +1,4 @@
+import {obtenerTodosLosUsuarios} from "../validateFormRegister";
 let inputEmail=document.getElementById("email");
 let inputPassword=document.getElementById("password");
 let formLogin=document.getElementById("formLogin");
@@ -24,7 +25,6 @@ if (newSession) {
     
 }
 
-
 inputEmail.addEventListener("blur", () => {
     validateEmail(inputEmail);
   });
@@ -43,7 +43,7 @@ function getRolUserLog() {
     if (user!==null) {
         return user.role
     }else{
-        return "Cliente"
+        return "cliente"
     }
      };
 
@@ -205,5 +205,3 @@ function validateEmail(input) {
 }
 
 
-
-  
