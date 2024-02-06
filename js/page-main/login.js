@@ -103,10 +103,9 @@ localStorage.setItem("users", JSON.stringify(users));
 
 window.LogOut = function() {
     sessionStorage.removeItem("user");
-    openLogout(); 
-    adminLi.className = "nav-item d-none";
-    window.location.replace("/index.html");
-};
+    adminLi.className="nav-item d-none"
+    window.location.replace("../index.html")
+  }
 
   
 
