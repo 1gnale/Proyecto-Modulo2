@@ -1,12 +1,14 @@
 let cloudProducts = JSON.parse(localStorage.getItem("products")) || [];
 
+
 const container = document.querySelector(".product-list");
 const btnSearch = document.querySelector('.btn-search');
 const selectCat = document.querySelector('.select-category');
+let buttonFav= document.querySelectorAll(".product-add");
 
-let chooseCategory = "Todo";
 
 function getProducts(products) {
+    
     let html = "";
     products.forEach(product => {
 
@@ -16,14 +18,19 @@ function getProducts(products) {
         `    <h5 class="card-title text-center title-text" style="height: 90px; overflow: hidden; text-overflow: ellipsis;">${product.names}</h5>`+
         `    <p class="card-text text-center d-none d-sm-block" style="height: 240px; overflow: hidden; text-overflow: ellipsis;">${product.description}</p>`+
         `    <h4 class="text-center">$${product.price}</h4>`+
-        `    <a href="../../src/pages/detailPages.html?id=${product.code}" class="btn mx-auto buy-button">Buy Now</a>`+
+        `    <a  class="m-1 btn btn-danger mx-auto product-add" id="${product.names}" > <i class="fa-solid fa-heart"> </i> Favoritos</a>`+
+        `    <a href="../../src/pages/detailPages.html?id=${product.code}" class="btn mx-auto buy-button ">Más detalles</a>`+
         `  </div>`+
         `</div>`;
+
+       
     });
+ 
     return html;
+   
 }
 container.innerHTML = getProducts(cloudProducts);
-
+ActButtonFav();
 
 selectCat.addEventListener('change', function() {
     
@@ -57,3 +64,32 @@ btnSearch.addEventListener('click', function() {
         container.innerHTML = getProducts(filteredProducts);
     }
 });
+
+
+function ActButtonFav() {
+    console.log("anda esta funcion");
+    buttonFav= document.querySelectorAll(".product-add");
+
+    buttonFav.forEach(button => {
+        button.addEventListener("click", addList);
+    });
+}
+
+const WishesProducts = [];
+console.log(WishesProducts);
+
+function addList(e){
+   const idButton= e.currentTarget.id;
+   console.log(idButton);
+   const productAdd = cloudProducts.find (product => product.names=== idButton );
+
+   if(WishesProducts.some(product => product.names === idButton)) {
+    const index = WishesProducts.findIndex(product => product.names === idButton);
+} else {
+    WishesProducts.push(productAdd);
+}
+console.log(WishesProducts);
+
+localStorage.setItem("productsWishList", JSON.stringify(WishesProducts));
+
+}
