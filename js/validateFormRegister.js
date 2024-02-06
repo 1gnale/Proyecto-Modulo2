@@ -200,8 +200,9 @@ function guardarUsuario(e) {
                 edad : inputEdad.value,
                 pais : inputPais.value,
                 email : inputEmail.value,
-                contraseña1 : inputContraseña1.value,
-                rol : "cliente",
+                password : inputContraseña1.value,
+                role : "cliente",
+                sessionActive : false,
             }
             arrayUsuario.push(user);
             localStorage.setItem("users",JSON.stringify(arrayUsuario));
