@@ -243,3 +243,9 @@ fileInput.addEventListener('change', function (event) {
     imgPreview.style.width = "30%";
     imgPreview.style.height = "30%";
 });
+
+window.LogOut = function() {
+    sessionStorage.removeItem("user");
+    adminLi.className = "nav-item d-none";
+    window.location.replace("/index.html");
+};

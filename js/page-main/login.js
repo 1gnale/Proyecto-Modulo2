@@ -1,4 +1,3 @@
-// import {obtenerTodosLosUsuarios} from "../validateFormRegister";
 let inputEmail=document.getElementById("email");
 let inputPassword=document.getElementById("password");
 let formLogin=document.getElementById("formLogin");
@@ -6,7 +5,7 @@ let adminLi=document.getElementById("adminLi");
 let register=document.getElementById("register");
 let lista=document.getElementById("lista")
 let cerrar=document.getElementById("cerrar")
-// let funcionalidad=obtenerTodosLosUsuarios();
+let iniciar=document.getElementById("iniciar")
 checkSaveAdmin();
 
 inputEmail.addEventListener("blur", () => {
@@ -46,7 +45,7 @@ function Login(e) {
                 checkAdmin(adminLi);
                 closeRegister(register)
                 openLogout(cerrar)
-                
+                closeLog(iniciar)
                 formLogin.reset();
                 $("#exampleModal").modal("hide")
             }else{
@@ -131,6 +130,14 @@ function openLogout(cerrar) {
     }
 }
 
+function closeLog(iniciar) {
+    const close= getRolUserLog();
+    if (close === "Administrador") {
+        iniciar.classList.add("d-none")
+    }
+}
+
+
 //validaciones
 
 function validateEmail(input) {
@@ -154,7 +161,6 @@ function validateEmail(input) {
         input.className = "form-control is-valid";
         return true;
     } else if (input.value.trim().length > 0 && input.value.trim().length < 8) {
-        // Cambié la longitud mínima a 8 caracteres (como se especifica en la expresión regular)
         input.className = "form-control is-invalid";
         return false;
     } else {
@@ -163,18 +169,6 @@ function validateEmail(input) {
     }
 }
 
-//  function log (funcionalidad) {
-//     const admin=getRolUserLog();
-    
-//     if (funcionalidad.length > 0 && admin !== null && admin.role === "Cliente") {
-//              lista.classList.remove("d-none")
-//          }
-//  }
-    // let usuarios=obtenerTodosLosUsuarios();
-    // let admin=getRolUserLog();
-    // if (usuarios.length > 0 && admin !== null && admin.role === "Cliente") {
-    //     lista.classList.remove("d-none")
-    // }
 
 
   
