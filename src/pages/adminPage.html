@@ -47,7 +47,7 @@
             <li class="nav-item" id="adminLi" >
               <a class="nav-link nav-link-edit rounded mx-1 text-center" href="../pages/adminPage.html">Administración</a>
             </li>
-              <li class="nav-item">
+            <li class="nav-item">
               <a class="nav-link nav-link-edit rounded mx-1 text-center" href="./WishesList.html">Lista de deseos</a>
             </li> 
           </ul>
@@ -90,7 +90,7 @@
     </div>
     <section class="container-fluid m-2">
         <h1 class="text-center p-4 bg-primary-admin "><strong>Panel de Administración</strong></h1>
-        <div class="d-none d-md-flex justify-content-center">
+        <div class="table-responsive d-md-flex justify-content-center">
             <table class="table my-5 " style="table-layout: fixed;">
                 <thead > 
                   <tr>
@@ -108,8 +108,8 @@
                 </tbody>
               </table>
         </div>
-        <div class="container admin-buttons d-flex justify-content-end">
-            <button id="btn-show-modal" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#create-product-modal">
+        <div class="container admin-buttons d-flex justify-content-center justify-content-md-end p-0 mt-4 mt-md-0">
+            <button id="btn-show-modal" type="button" class="btn btn-primary btn-lg m-0 btn-load-product" data-bs-toggle="modal" data-bs-target="#create-product-modal">
                 Cargar Producto
             </button>
         </div>
@@ -135,23 +135,23 @@
                               </label>
                             </div>
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-2">
                             <label for="product-name" class="col-form-label">Nombre:</label>
-                            <input type="text" class="form-control" id="product-name" required>
+                            <input type="text" class="form-control" id="product-name" placeholder="Ej: Ego" minlength="5" maxlength="25" required>
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-2">
                             <label for="product-description" class="col-form-label">Description:</label>
-                            <textarea type="text" class="form-control" id="product-description" required></textarea>
+                            <textarea type="text" class="form-control" id="product-description" placeholder="Ej: Ego es el perfume mas ..." minlength="10" maxlength="50" required></textarea>
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-2">
                             <label for="product-price" class="col-form-label">Precio:</label>
-                            <input type="number" class="form-control" id="product-price" required>
+                            <input type="number" class="form-control" id="product-price" placeholder="Ej: 39.99" minlength="1" maxlength="50" required>
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-2">
                             <label for="product-stock" class="col-form-label">Stock:</label>
-                            <input type="number" class="form-control" id="product-stock" required>
+                            <input type="number" class="form-control" id="product-stock" placeholder="Ej: 4" minlength="1" maxlength="5" required>
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-2">
                             <label for="product-stock" class="col-form-label">Categoria:</label>
                             <select class="form-control" id="product-category" required>
                                 <option value="Dulce">Dulce</option>
@@ -163,7 +163,7 @@
                 </div>
                 <div class="modal-footer">
                     <button id="btn-create-exit" type="button" class="btn btn-secondary" data-bs-dismiss="modal" hidden>Cerrar</button>
-                    <button id="save-product" type="button" class="btn btn-primary">Guardar</button>
+                    <button id="save-product" type="button" class="btn btn-primary btn-save">Guardar</button>
                 </div>
             </div>
         </div>
