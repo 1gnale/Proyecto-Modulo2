@@ -171,17 +171,4 @@ function validateEmail(input) {
     }
 }
 
-//Funciones para enlazar usuarios
 
-function rex() {
-    const usuarios = obtenerTodosLosUsuarios();
-    const admin = getRolUserLog();
-
-    if (usuarios.length > 0 && admin.role !== "Administrador") {
-        lista.classList.remove("d-none");
-    }else{
-        lista.classList.add("d-none")
-    }
-}
-
-rex();
