@@ -271,8 +271,6 @@ body {
   width: 200px;
   font-size: 1.4em;
   font-weight: 600;
-  background-color: var(--primary-button);
-  color: var(--font-color-2);
 }
 
 .product-card{
@@ -302,6 +300,12 @@ body {
 
 .product-card:hover .buy-button {
   display: block;
+  border: 1px solid var(--primary-button);
+}
+
+.buy-button:hover {
+  background-color: var(--primary-button);
+  color: var(--font-color-2);
 }
 
 .product-card-body{

@@ -236,3 +236,10 @@ function limpiarFormulario(){
     inputContraseña2.className="form-control";
 }
 
+
+
+
+    
+    
+   
+    
