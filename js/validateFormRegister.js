@@ -232,7 +232,14 @@ function limpiarFormulario(){
     inputContraseña2.className="form-control";
 }
 
+//exportacion de usuarios para enlazar
+export function obtenerTodosLosUsuarios() {
+        const arrayUsuarios = JSON.parse(localStorage.getItem("users")) || [];
+        return arrayUsuarios;
+     }
 
 
-
-
+    
+    
+   
+    

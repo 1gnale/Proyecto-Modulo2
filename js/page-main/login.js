@@ -1,3 +1,4 @@
+import {obtenerTodosLosUsuarios} from "../validateFormRegister";
 let inputEmail=document.getElementById("email");
 let inputPassword=document.getElementById("password");
 let formLogin=document.getElementById("formLogin");
@@ -7,6 +8,7 @@ let lista=document.getElementById("lista")
 let cerrar=document.getElementById("cerrar")
 let iniciar=document.getElementById("iniciar")
 checkSaveAdmin();
+
 
 inputEmail.addEventListener("blur", () => {
     validateEmail(inputEmail);
@@ -26,7 +28,7 @@ function getRolUserLog() {
     if (user!==null) {
         return user.role
     }else{
-        return "Cliente"
+        return "cliente"
     }
      };
 
@@ -169,6 +171,17 @@ function validateEmail(input) {
     }
 }
 
+//Funciones para enlazar usuarios
 
+function rex() {
+    const usuarios = obtenerTodosLosUsuarios();
+    const admin = getRolUserLog();
 
-  
+    if (usuarios.length > 0 && admin.role !== "Administrador") {
+        lista.classList.remove("d-none");
+    }else{
+        lista.classList.add("d-none")
+    }
+}
+
+rex();
