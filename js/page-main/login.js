@@ -8,6 +8,23 @@ let cerrar=document.getElementById("cerrar")
 let iniciar=document.getElementById("iniciar")
 checkSaveAdmin();
 
+let newUser= JSON.parse(localStorage.getItem("users"));
+let newSession  = JSON.parse(sessionStorage.getItem("user"));
+
+if (newSession) {
+
+    const usuarioEncontrado=newUser.find((element)=>element.email==newSession.email)
+
+    if (usuarioEncontrado.sessionActive){
+        closeLog(iniciar);
+        closeLog(register);
+        openLogout(lista);
+        openLogout(cerrar);
+    }
+    
+}
+
+
 inputEmail.addEventListener("blur", () => {
     validateEmail(inputEmail);
   });
@@ -32,7 +49,7 @@ function getRolUserLog() {
 
 function Login(e) {
     e.preventDefault();
-    const usuariosRegistrados=JSON.parse(localStorage.getItem("users"));
+    let usuariosRegistrados= JSON.parse(localStorage.getItem("users"));
     if (usuariosRegistrados.length >0 && usuariosRegistrados !== null) {
         const usuarioEncontrado=usuariosRegistrados.find((element)=>element.email===inputEmail.value)
         if (usuarioEncontrado !== undefined) {
@@ -43,11 +60,20 @@ function Login(e) {
                 };
                 saveUserLog(savedUser);
                 checkAdmin(adminLi);
-                closeRegister(register)
-                openLogout(cerrar)
-                closeLog(iniciar)
+                closeRegister(register);
+                openLogout(cerrar);
+                openWhist(lista);
+                closeLog(iniciar);
                 formLogin.reset();
                 $("#exampleModal").modal("hide")
+
+                usuariosRegistrados.forEach(user => {
+                    if (user.email == usuarioEncontrado.email) {
+                        user.sessionActive = true;
+                    }
+                });
+                localStorage.setItem('users', JSON.stringify(usuariosRegistrados));
+
             }else{
                 Swal.fire({
                     icon: "error",
@@ -100,8 +126,20 @@ localStorage.setItem("users", JSON.stringify(users));
 
 
 window.LogOut = function() {
+    
+    let sesionAct = JSON.parse(sessionStorage.getItem("user"));
+    let usuariosRegistrados= JSON.parse(localStorage.getItem("users"));
+
+    usuariosRegistrados.forEach(user => {
+        if (user.email == sesionAct.email) {
+            user.sessionActive = false;
+        }
+    });
+    localStorage.setItem('users', JSON.stringify(usuariosRegistrados));
     sessionStorage.removeItem("user");
-    openLogout(); 
+    closeLog(cerrar);
+    openLogout(iniciar);
+    openLogout(register);
     adminLi.className = "nav-item d-none";
     window.location.replace("/index.html");
 };
@@ -117,24 +155,21 @@ window.LogOut = function() {
 }
 
 function closeRegister(register) {
-    const close= getRolUserLog();
-    if (close === "Administrador") {
-        register.classList.add("d-none")
-    }
+    register.classList.add("d-none")
 }
 
+function openWhist(list) {
+
+    list.classList.remove("d-none");
+}
+
+
 function openLogout(cerrar) {
-    const open= getRolUserLog();
-    if (open === "Administrador") {
-        cerrar.classList.remove("d-none")
-    }
+    cerrar.classList.remove("d-none")
 }
 
 function closeLog(iniciar) {
-    const close= getRolUserLog();
-    if (close === "Administrador") {
-        iniciar.classList.add("d-none")
-    }
+    iniciar.classList.add("d-none")
 }
 
 
