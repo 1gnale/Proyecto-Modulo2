@@ -1,9 +1,12 @@
+// import {obtenerTodosLosUsuarios} from "../validateFormRegister";
 let inputEmail=document.getElementById("email");
 let inputPassword=document.getElementById("password");
 let formLogin=document.getElementById("formLogin");
 let adminLi=document.getElementById("adminLi");
 let register=document.getElementById("register");
-
+let lista=document.getElementById("lista")
+let cerrar=document.getElementById("cerrar")
+// let funcionalidad=obtenerTodosLosUsuarios();
 checkSaveAdmin();
 
 inputEmail.addEventListener("blur", () => {
@@ -42,7 +45,7 @@ function Login(e) {
                 saveUserLog(savedUser);
                 checkAdmin(adminLi);
                 closeRegister(register)
-                
+                openLogout(cerrar)
                 
                 formLogin.reset();
                 $("#exampleModal").modal("hide")
@@ -95,44 +98,12 @@ localStorage.setItem("users", JSON.stringify(users));
 
 //funciones para cerrar items del navbar
 
-window.onload = function() {
-    
-    checkLoggedInUser();
-};
-
-function checkLoggedInUser() {
-    const user = JSON.parse(sessionStorage.getItem("user"));
-
-    if (user !== null) {
-        showLogoutButton();
-    } else {
-        hideLogoutButton();
-    }
-}
-
-function showLogoutButton() {
-    const logoutButton = document.getElementById("cerrar");
-    if (logoutButton) {
-        logoutButton.classList.remove("d-none");
-    }
-}
-
-
-
-function hideLogoutButton() {
-    const logoutButton = document.getElementById("cerrar");
-    if (logoutButton) {
-        logoutButton.classList.add("d-none");
-    }
-}
-
-
 
 
 window.LogOut = function() {
     sessionStorage.removeItem("user");
-    hideLogoutButton(); 
-    adminLi.className="nav-item d-none"
+    openLogout(); 
+    adminLi.className = "nav-item d-none";
     window.location.replace("/index.html");
 };
 
@@ -150,6 +121,13 @@ function closeRegister(register) {
     const close= getRolUserLog();
     if (close === "Administrador") {
         register.classList.add("d-none")
+    }
+}
+
+function openLogout(cerrar) {
+    const open= getRolUserLog();
+    if (open === "Administrador") {
+        cerrar.classList.remove("d-none")
     }
 }
 
@@ -184,6 +162,19 @@ function validateEmail(input) {
         return false;
     }
 }
+
+//  function log (funcionalidad) {
+//     const admin=getRolUserLog();
+    
+//     if (funcionalidad.length > 0 && admin !== null && admin.role === "Cliente") {
+//              lista.classList.remove("d-none")
+//          }
+//  }
+    // let usuarios=obtenerTodosLosUsuarios();
+    // let admin=getRolUserLog();
+    // if (usuarios.length > 0 && admin !== null && admin.role === "Cliente") {
+    //     lista.classList.remove("d-none")
+    // }
 
 
   

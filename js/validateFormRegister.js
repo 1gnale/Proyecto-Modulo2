@@ -231,3 +231,8 @@ function limpiarFormulario(){
     inputContraseña2.className="form-control";
 }
 
+// export function obtenerTodosLosUsuarios() {
+//     const arrayUsuarios = JSON.parse(localStorage.getItem("users")) || [];
+//     return arrayUsuarios;
+// }
+// console.log("usuarios registrados",arrayUsuarios);
