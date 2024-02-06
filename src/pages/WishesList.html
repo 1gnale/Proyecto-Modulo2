@@ -22,16 +22,16 @@
     <title>Lista de deseos</title>
 </head>
 <body>
-    <header>
-      <nav class="navbar navbar-expand-lg z-2">
+  <header>
+    <nav class="navbar navbar-expand-lg z-2">
         <div class="container-fluid">
           <div class="d-none d-lg-block">
-            <a href="/index.html">
+            <a href="../../index.html">
               <img class="logo-lg-h" src="../img/navbar-footer/image-removebg-preview_(6).png" alt="logo-rolling perfumes" />
             </a>
           </div>
           <div class="d-sm-block d-lg-none">
-            <a href="/index.html"><img class="logo-sm-h" src="../img/navbar-footer/image-removebg-preview.png" alt="logo-rolling perfumes" /></a>
+            <a href="../../index.html"><img class="logo-sm-h" src="../img/navbar-footer/image-removebg-preview.png" alt="logo-rolling perfumes" /></a>
           </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -39,27 +39,29 @@
           <div class="collapse navbar-collapse d-lg-flex flex-lg-row justify-content-lg-between" id="navbarNav">
             <ul class="navbar-nav ms-lg-4 my-3 my-lg-0 ">
               <li class="nav-item">
-                <a class="nav-link active nav-link-edit rounded mx-1 text-center" aria-current="page" href="/index.html">Inicio</a>
+                <a class="nav-link active nav-link-edit rounded mx-1 text-center" aria-current="page" href="../../index.html">Inicio</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link nav-link-edit rounded mx-1 text-center" href="../pages/AboutUs.html">Acerca de Nosotros</a>
+                <a class="nav-link nav-link-edit rounded mx-1 text-center" href="./AboutUs.html">Acerca de Nosotros</a>
               </li>
               <!-- Esto se va a ver solo cuando el usuario se logee o el administrador -->
               <li class="nav-item" id="adminLi" >
-                <a class="nav-link nav-link-edit rounded mx-1 text-center" href="../pages/adminPage.html">Administración</a>
+                <a class="nav-link nav-link-edit d-none rounded mx-1 text-center" href="./adminPage.html">Administración</a>
               </li>
                 <li class="nav-item">
-                <a class="nav-link nav-link-edit rounded mx-1 text-center" href="./WishesList.html">Lista de deseos</a>
-              </li> 
+                <a class="nav-link nav-link-edit rounded d-none mx-1 text-center" href="./WishesList.html">Lista de deseos</a>
+              </li>  
             </ul>
             <div class="nav-item d-flex justify-content-lg-between">
-              <a class="nav-link nav-link-edit  btn rounded-2 p-2 m-1" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Ingresar</a>
-              <a class="nav-link btn nav-link-edit rounded-2 m-1 p-2 text-center" href="../pages/registerPage.html">Registrarse</a>
-                <a class="nav-link nav-link-edit btn rounded-2 m-1 p-2 text-center" onclick="LogOut()" href="#">Cerrar Sesion</a>
+              <a class="nav-link nav-link-edit  btn rounded-2 p-2 m-1" href="#"  data-bs-toggle="modal" data-bs-target="#exampleModal">Ingresar</a>
+              <a class="nav-link btn nav-link-edit rounded-2 m-1 p-2 text-center" id="register" href="./registerPage.html">Registrarse</a>
+              
+                <a class="nav-link nav-link-edit btn d-none rounded-2 m-1 p-2 text-center" onclick="LogOut()" href="#">Cerrar Sesion</a>
             </div>
-              </div>             
+              </div>  
           </div>
       </nav>
+      
   </header>
     <main class="mb-5 pb-5 pt-2">
         <!-- Modal -->
@@ -91,7 +93,7 @@
     </div>
     <h1 class="container">Lista de deseos</h1>
         <section class="products-container">
-        <div class="Wishes row mx-auto">
+        <div class="Wishes row mx-auto container">
           <!-- list of product using  javascript in WishesList.js file -->
        </div>
        </section>
@@ -115,18 +117,25 @@
                  <p>San Miguel de Tucuman - Argentina </p>
             </div>
             <div
-            class=" col-sm-12 col-md-4 py-3 my-4  ">
-            <a href="../pages/404NotFound.html" class="text-white facebook  m-3 ">
+            class=" col-sm-12 col-md-4 py-3 my-4 d-none d-lg-block ">
+            <a href="./src/pages/404NotFound.html" class="text-white facebook  m-3 ">
               <i class="fa-brands fa-square-facebook fa-2xl "></i
             ></a>
-            <a href="../pages/404NotFound.html" class="text-white instagram m-2  "
+            <a href="./src/pages/404NotFound.html" class="text-white instagram m-2  "
               ><i class="fa-brands fa-instagram fa-2xl "></i
             ></a>
-            <a href="../pages/404NotFound.html" class="text-white whatsapp m-3"><i class="fa-brands fa-whatsapp fa-2xl"></i></a>
-          </div>
-          <div class="w-100   text-center">
-            <h4>&copy; RollingPerfumes</h4>
-          </div>
+            <a href="./src/pages/404NotFound.html" class="text-white whatsapp m-3"><i class="fa-brands fa-whatsapp fa-2xl"></i></a>
+          </div>        
+          <div
+                class=" col-sm-12 col-md-4 py-3 my-4  d-sm-block d-lg-none text-center">
+                <a href="./404NotFound.html" class="text-white facebook  m-3 ">
+                  <i class="fa-brands fa-square-facebook fa-xl "></i
+                ></a>
+                <a href="./404NotFound.html" class="text-white instagram m-2  "
+                  ><i class="fa-brands fa-instagram fa-xl "></i
+                ></a>
+                <a href="./404NotFound.html" class="text-white whatsapp m-3"><i class="fa-brands fa-whatsapp fa-xl"></i></a>
+              </div>
           </section>
     </footer>
     <script src="../../js/bootstrap.min.js"></script>
