@@ -3,6 +3,15 @@ let inputPassword=document.getElementById("password");
 let formLogin=document.getElementById("formLogin");
 let adminLi=document.getElementById("adminLi");
 let register=document.getElementById("register");
+
+checkSaveAdmin();
+
+inputEmail.addEventListener("blur", () => {
+    validateEmail(inputEmail);
+  });
+  inputPassword.addEventListener("blur", () => {
+    validatePassword(inputPassword);
+  });
 formLogin.addEventListener("submit",Login);
 
 function saveUserLog(user) {
@@ -31,17 +40,35 @@ function Login(e) {
                     role:usuarioEncontrado.role,
                 };
                 saveUserLog(savedUser);
+                checkAdmin(adminLi);
+                closeRegister(register)
+                
+                
                 formLogin.reset();
                 $("#exampleModal").modal("hide")
-                checkAdmin(adminLi);
             }else{
-                 alert("Email o Password incorrectos")
+                Swal.fire({
+                    icon: "error",
+                    title: "Email o Password incorrectos",
+                    text: "Por favor vuelva a ingresar los Datos",
+
+                    });
             }
         }else{
-            alert("Email o Password incorrectos")
+            Swal.fire({
+                icon: "error",
+                title: "Email o Password incorrectos",
+                text: "Por favor vuelva a ingresar los Datos",
+                
+                });
         }
     }else{
-        alert("No existe usuarios Registrados")
+        Swal.fire({
+            icon: "error",
+            title: "Email o Password incorrectos",
+            text: "Por favor vuelva a ingresar los Datos",
+            
+            });
     }
 }
 
@@ -54,18 +81,60 @@ function checkSaveAdmin(){
     password:"Perfumes24",
 
 
-};
-if (!arrayUsers || arrayUsers.length === 0) {
-    const users = [userAdmin];
-    localStorage.setItem("users", JSON.stringify(users));
 }
-   }
+if (arrayUsers===null) {
+    const users=[userAdmin];      
+    localStorage.setItem("users", JSON.stringify(users));
 
-   window.LogOut=function(){
+}else if (arrayUsers.length===0) {
+const users=[userAdmin];     
+localStorage.setItem("users", JSON.stringify(users));
+}
+}
+
+
+//funciones para cerrar items del navbar
+
+window.onload = function() {
+    
+    checkLoggedInUser();
+};
+
+function checkLoggedInUser() {
+    const user = JSON.parse(sessionStorage.getItem("user"));
+
+    if (user !== null) {
+        showLogoutButton();
+    } else {
+        hideLogoutButton();
+    }
+}
+
+function showLogoutButton() {
+    const logoutButton = document.getElementById("cerrar");
+    if (logoutButton) {
+        logoutButton.classList.remove("d-none");
+    }
+}
+
+
+
+function hideLogoutButton() {
+    const logoutButton = document.getElementById("cerrar");
+    if (logoutButton) {
+        logoutButton.classList.add("d-none");
+    }
+}
+
+
+
+
+window.LogOut = function() {
     sessionStorage.removeItem("user");
+    hideLogoutButton(); 
     adminLi.className="nav-item d-none"
-    window.location.replace("/index.html")
-  }
+    window.location.replace("/index.html");
+};
 
   
 
@@ -80,8 +149,41 @@ if (!arrayUsers || arrayUsers.length === 0) {
 function closeRegister(register) {
     const close= getRolUserLog();
     if (close === "Administrador") {
-        register.className="d-none"
+        register.classList.add("d-none")
     }
 }
+
+//validaciones
+
+function validateEmail(input) {
+    let regEmail =
+      /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+    if (regEmail.test(input.value)) {
+      input.className = "form-control is-valid";
+      return true;
+    } else if (input.value.trim().length > 0 && input.value.trim().length < 6) {
+      input.className = "form-control is-valid";
+      return true;
+    } else {
+      input.className = "form-control is-invalid";
+      return false;
+    }
+  }
+
+  function validatePassword(input) {
+    let regPass = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/;
+    if (regPass.test(input.value)) {
+        input.className = "form-control is-valid";
+        return true;
+    } else if (input.value.trim().length > 0 && input.value.trim().length < 8) {
+        // Cambié la longitud mínima a 8 caracteres (como se especifica en la expresión regular)
+        input.className = "form-control is-invalid";
+        return false;
+    } else {
+        input.className = "form-control is-invalid";
+        return false;
+    }
+}
+
 
   
