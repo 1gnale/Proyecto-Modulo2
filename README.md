@@ -30,5 +30,5 @@ En este proyecto se desarrolla una e-commerce de perfumes, aplicando lo aprendid
 ## Estado del proyecto: DEMO
 Link:
 Usuario administrador :
-- Email:
-- Contraseña
+- Email: perfumenrolling@gmail.com
+- Contraseña: Perfumes24
